@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Morgai";
+  src: url("/fonts/morgaiRetan/morgai-retan.otf");
+}
+
+@font-face {
+  font-family: "FODO";
+  src: url("/fonts/fadou/faodudemoregular-2vl4v.otf");
+}
+
+:root {
+  --color: rgb(0, 0, 0);
+}
+
+body {
+  background-color: var(--color);
+}
+
+.image {
+  background: linear-gradient(220deg, transparent, var(--color)),
+    linear-gradient(to bottom, transparent, var(--color)),
+    linear-gradient(to right, transparent, var(--color)),
+    url("/images/mImage.png");
+  background-position: center;
+  background-size: cover;
+
+  transform: scale(1.5) scaleX(-1);
+}
+
+.title {
+  font-size: 9rem;
+  line-height: 0.8;
+  color: wheat;
+  font-family: "FODO", sans-serif;
+}
+@media (max-width: 768px) {
+  .title {
+    font-size: 4rem;
+  }
+  .image {
+    scale: 1;
+    left: 25%;
+  }
+}
+.kbm-title {
+  font-size: 5rem;
+  line-height: 0.8;
+  color: black;
+  font-family: "FODO", sans-serif;
+}
+.keyboard {
+  position: relative;
+  width: 60%;
+  height: 300px;
+}
+
+.key {
+  @apply flex h-6 w-6 items-center justify-center rounded-full border-black bg-orange-800/80 font-mono text-xl font-medium shadow-md shadow-orange-950 md:h-16 md:w-16;
+}
