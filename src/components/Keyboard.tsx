@@ -46,8 +46,8 @@ const Keyboard = () => {
         if (targetKey) {
           gsap.to(targetKey, {
             backgroundColor: "rgb(254 ,215, 170)",
-            duration: 0.5,
-            delay: index + 2,
+            duration: 0.2,
+            delay: index * 0.5 + 1,
             repeat: 1,
             yoyo: true,
           });
@@ -63,9 +63,8 @@ const Keyboard = () => {
           options={{
             strings: ["NAMASTE"],
             autoStart: true,
-
             loop: false,
-            delay: 900,
+            delay: 450,
             deleteSpeed: 0,
             cursor: "|",
           }}
