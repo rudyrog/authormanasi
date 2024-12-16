@@ -1,4 +1,5 @@
 "use client";
+import Navigation from "../components/Navigation";
 import "./globals.css";
 export default function RootLayout({
   children,
@@ -7,7 +8,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="">
+        <main>{children}</main>
+        <div className="fixed bottom-10 left-10 z-50">
+          <Navigation />
+        </div>
+      </body>
     </html>
   );
 }

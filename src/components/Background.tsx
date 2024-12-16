@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
 import { gsap } from "gsap";
+import React, { useEffect, useState } from "react";
 
 const translations: string[] = [
   "नमस्ते", // Hindi
@@ -138,7 +138,7 @@ const Background: React.FC = () => {
           return (
             <div
               key={index}
-              className="greeting-word absolute text-2xl font-semibold text-white/50 opacity-0"
+              className="greeting-word absolute z-50 text-2xl font-semibold text-white/50 opacity-0"
               style={{
                 left: `${left}px`,
                 top: `${top}px`,

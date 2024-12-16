@@ -11,7 +11,9 @@
   font-family: "FODO";
   src: url("/fonts/fadou/faodudemoregular-2vl4v.otf");
 }
-
+.fodo {
+  font-family: "FODO", sans-serif;
+}
 :root {
   --color: rgb(0, 0, 0);
 }
@@ -20,9 +22,9 @@ body {
   background-color: var(--color);
 }
 
-body {
+/* body {
   cursor: none;
-}
+} */
 .image {
   background: linear-gradient(220deg, transparent, var(--color)),
     linear-gradient(to bottom, transparent, var(--color)),
@@ -30,8 +32,8 @@ body {
     url("/images/mImage.png");
   background-position: center;
   background-size: cover;
-
-  transform: scale(1.5) scaleX(-1);
+  filter: saturate(0);
+  transform: scale(2.5) scaleX(-1);
 }
 
 .title {
@@ -55,6 +57,7 @@ body {
   color: black;
   font-family: "FODO", sans-serif;
 }
+
 .keyboard {
   position: relative;
   width: 60%;
@@ -63,4 +66,10 @@ body {
 
 .key {
   @apply flex h-6 w-6 items-center justify-center rounded-full border-black bg-orange-800/80 font-mono text-xl font-medium shadow-md shadow-orange-950 md:h-16 md:w-16;
+}
+.icon {
+  @apply m-3 rounded-full;
+}
+.card {
+  @apply rounded-full border border-orange-200/35 bg-black/30 p-3 text-5xl text-white backdrop-blur-md;
 }

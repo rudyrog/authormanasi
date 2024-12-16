@@ -1,12 +1,12 @@
 "use client";
+import Background from "@/components/Background";
+import Cursor from "@/components/Cursor";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect } from "react";
 import Keyboard from "../components/Keyboard";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
-import React, { useEffect } from "react";
-import Cursor from "@/components/Cursor";
-import Background from "@/components/Background";
 
 export default function Home() {
   useEffect(() => {
@@ -61,7 +61,7 @@ export default function Home() {
               MEHTA
             </h1>
           </div>
-          <div className="image absolute left-[55%] h-96 w-52"></div>
+          <div className="image absolute left-[55%] top-72 z-0 h-96 w-52"></div>
         </div>
       </section>
     </>
