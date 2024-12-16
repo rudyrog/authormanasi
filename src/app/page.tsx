@@ -6,6 +6,7 @@ import Keyboard from "../components/Keyboard";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 import React, { useEffect } from "react";
 import Cursor from "@/components/Cursor";
+import Background from "@/components/Background";
 
 export default function Home() {
   useEffect(() => {
@@ -46,6 +47,7 @@ export default function Home() {
   return (
     <>
       <Cursor />
+      <Background />
       <div className="kbm absolute z-50 flex h-screen w-screen items-center justify-center bg-orange-200">
         <Keyboard />
       </div>
