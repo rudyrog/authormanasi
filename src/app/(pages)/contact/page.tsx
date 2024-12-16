@@ -2,8 +2,8 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
-import { FaFacebookF, FaInstagram } from "react-icons/fa";
-
+import { CiAt } from "react-icons/ci";
+import { FaPhone } from "react-icons/fa";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Contact() {
@@ -32,10 +32,10 @@ export default function Contact() {
   }, [window]);
 
   return (
-    <div className="flex min-h-[400vh] items-center">
+    <div className="flex min-h-[300vh] items-center">
       <h1
         id="socials"
-        className="fodo fixed left-0 top-1/2 -translate-y-1/2 transform font-bold text-orange-200"
+        className="fodo fixed left-5 top-1/2 -translate-y-1/2 transform font-bold text-orange-200"
         style={{
           fontSize: "36rem",
           letterSpacing: "2rem",
@@ -46,17 +46,29 @@ export default function Contact() {
       </h1>
 
       <div className="socials-content fixed left-0 top-0 z-50 h-screen w-[300vw]">
-        <div className="translate-x-[10%] translate-y-[70vh] text-3xl text-white">
+        <div className="translate-x-[10%] translate-y-[100%] text-white">
           <div className="card flex w-fit items-center justify-center">
-            <FaFacebookF style={{ fontSize: "8rem" }} />
-            <div>@manasiMehta</div>
+            <CiAt style={{ fontSize: "6rem" }} />
+            <div className="mx-3 text-7xl">Facebook</div>
           </div>
         </div>
 
-        <div className="translate-x-[30%] translate-y-[-20vh] text-3xl text-white">
+        <div className="translate-x-[20%] translate-y-[160%] text-3xl text-white">
           <div className="card flex w-fit items-center justify-center">
-            <FaInstagram style={{ fontSize: "8rem" }} />
-            <div>@manasiMehta</div>
+            <CiAt style={{ fontSize: "6rem" }} />
+            <div className="mx-3 text-7xl">INSTAGRAM</div>
+          </div>
+        </div>
+        <div className="translate-x-[35%] translate-y-[-100%] text-3xl text-white">
+          <div className="card flex w-fit items-center justify-center">
+            <CiAt style={{ fontSize: "6rem" }} />
+            <div className="mx-3 text-7xl">EMAIL</div>
+          </div>
+        </div>
+        <div className="translate-x-[45%] translate-y-[-90%] text-3xl text-white">
+          <div className="card flex w-fit items-center justify-center">
+            <FaPhone style={{ fontSize: "6rem" }} />
+            <div className="mx-3 text-7xl">+919426704717</div>
           </div>
         </div>
       </div>

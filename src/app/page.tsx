@@ -45,13 +45,16 @@ export default function Home() {
     }, 5000);
   }, [window]);
   return (
-    <>
+    <div className="max-h-screen overflow-y-hidden">
       <Cursor />
       <Background />
-      <div className="kbm absolute z-50 flex h-screen w-screen items-center justify-center bg-orange-200">
+      <div
+        style={{ zIndex: 99999 }}
+        className="kbm absolute flex h-screen w-screen items-center justify-center bg-orange-200"
+      >
         <Keyboard />
       </div>
-      <section className="flex h-screen items-center justify-center">
+      <section className="flex h-screen items-center justify-center overflow-y-hidden">
         <div className="flex flex-row items-center space-x-8">
           <div className="relative z-10 flex flex-col">
             <h1 id="mansi" className="fname title -translate-x-16">
@@ -64,6 +67,6 @@ export default function Home() {
           <div className="image absolute left-[55%] top-72 z-0 h-96 w-52"></div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

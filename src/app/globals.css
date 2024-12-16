@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 2px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: white;
+}
+
 @font-face {
   font-family: "Morgai";
   src: url("/fonts/morgaiRetan/morgai-retan.otf");
@@ -11,8 +31,16 @@
   font-family: "FODO";
   src: url("/fonts/fadou/faodudemoregular-2vl4v.otf");
 }
+
+@font-face {
+  font-family: "Mersica";
+  src: url("/fonts/merisca-font/merisca.otf");
+}
 .fodo {
   font-family: "FODO", sans-serif;
+}
+.mersica {
+  font-family: "Mersica", sans-serif;
 }
 :root {
   --color: rgb(0, 0, 0);
@@ -72,4 +100,19 @@ body {
 }
 .card {
   @apply rounded-full border border-orange-200/35 bg-black/30 p-3 text-5xl text-white backdrop-blur-md;
+}
+.navButton {
+  background-color: black;
+  color: wheat;
+  @apply fodo rounded-3xl border-2 border-transparent p-2 text-lg font-medium;
+  transition:
+    background-color 0.8s ease,
+    border-color 0.8s ease,
+    color 0.8s ease;
+}
+
+.navButton:hover {
+  background-color: wheat;
+
+  color: black;
 }

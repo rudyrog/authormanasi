@@ -8,7 +8,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="">
+      <body>
         <main>{children}</main>
         <div className="fixed bottom-10 left-10 z-50">
           <Navigation />
