@@ -20,6 +20,9 @@ body {
   background-color: var(--color);
 }
 
+body {
+  cursor: none;
+}
 .image {
   background: linear-gradient(220deg, transparent, var(--color)),
     linear-gradient(to bottom, transparent, var(--color)),

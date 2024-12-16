@@ -75,7 +75,7 @@ const Keyboard = () => {
           {keys.slice(0, 10).map((key, index) => (
             <div
               key={index}
-              className="key cursor-pointer rounded-lg border border-gray-300 bg-white p-3 text-center font-bold"
+              className="key rounded-lg border border-gray-300 bg-white p-3 text-center font-bold"
             >
               {key}
             </div>
@@ -85,7 +85,7 @@ const Keyboard = () => {
           {keys.slice(10, 20).map((key, index) => (
             <div
               key={index}
-              className="key cursor-pointer rounded-lg border border-gray-300 bg-white p-3 text-center font-bold"
+              className="key rounded-lg border border-gray-300 bg-white p-3 text-center font-bold"
             >
               {key}
             </div>
@@ -95,7 +95,7 @@ const Keyboard = () => {
           {keys.slice(20).map((key, index) => (
             <div
               key={index}
-              className="key cursor-pointer rounded-lg border border-gray-300 bg-white p-3 text-center font-bold"
+              className="key rounded-lg border border-gray-300 bg-white p-3 text-center font-bold"
             >
               {key}
             </div>

@@ -2,9 +2,11 @@
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect } from "react";
 import Keyboard from "../components/Keyboard";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
+import React, { useEffect } from "react";
+import Cursor from "@/components/Cursor";
+
 export default function Home() {
   useEffect(() => {
     setTimeout(() => {
@@ -41,9 +43,9 @@ export default function Home() {
       );
     }, 5000);
   }, [window]);
-
   return (
     <>
+      <Cursor />
       <div className="kbm absolute z-50 flex h-screen w-screen items-center justify-center bg-orange-200">
         <Keyboard />
       </div>
