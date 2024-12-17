@@ -13,14 +13,15 @@ export default function Navigation() {
 
     gsap.to(overlayRef.current, {
       y: "-100%",
-      duration: 2,
+      duration: 1,
       ease: "power2.inOut",
       onComplete: () => {
         router.push(href);
 
         gsap.to(overlayRef.current, {
           y: "-200%",
-          duration: 2,
+          delay: 0.5,
+          duration: 4,
           ease: "power2.inOut",
         });
       },
@@ -31,27 +32,43 @@ export default function Navigation() {
     <>
       <div
         ref={overlayRef}
-        className="absolute -top-0 left-[-100vw] z-[50] h-screen w-[200vw] translate-y-[100%] bg-black"
+        className="absolute -top-0 left-[-120vw] z-[50] h-screen w-[200vw] translate-y-[100%] bg-black"
       ></div>
 
       <div
         className="relative z-[51] flex items-center justify-center gap-3 text-xl"
         style={{ color: "wheat" }}
       >
-        <Link href="/" onClick={handleNavigation("/")}>
+        <Link href="/" className="navButton" onClick={handleNavigation("/")}>
           Home
         </Link>
         <div>|</div>
-        <Link href="/books" onClick={handleNavigation("/books")}>
+        <Link
+          href="/books"
+          onClick={handleNavigation("/books")}
+          className="navButton"
+        >
           Books
         </Link>
-        <Link href="/blogs" onClick={handleNavigation("/blogs")}>
+        <Link
+          href="/blogs"
+          onClick={handleNavigation("/blogs")}
+          className="navButton"
+        >
           Blogs
         </Link>
-        <Link href="/about" onClick={handleNavigation("/about")}>
+        <Link
+          href="/about"
+          onClick={handleNavigation("/about")}
+          className="navButton"
+        >
           About
         </Link>
-        <Link href="/contact" onClick={handleNavigation("/contact")}>
+        <Link
+          href="/contact"
+          onClick={handleNavigation("/contact")}
+          className="navButton"
+        >
           Contact
         </Link>
       </div>

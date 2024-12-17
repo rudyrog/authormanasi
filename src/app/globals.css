@@ -107,16 +107,3 @@ body {
   background-color: rgb(226, 190, 122);
   @apply text-stone-800;
 }
-
-/* .buyButton {
-  color: wheat;
-  @apply brownbulgary mt-44 flex w-fit items-center justify-center rounded-lg border-2 border-transparent p-1 text-lg font-medium;
-  transition:
-    background-color 0.8s ease,
-    border-color 0.8s ease,
-    color 0.8s ease;
-}
-.buyButton:hover {
-  background-color: rgb(226, 190, 122);
-  @apply text-stone-800;
-} */
