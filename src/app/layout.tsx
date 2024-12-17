@@ -12,7 +12,7 @@ export default function RootLayout({
       <body>
         <main>
           {children}
-          <div className="fixed bottom-10 left-1/2 z-50 -translate-x-1/2 transform">
+          <div className="">
             <Navigation />
           </div>
         </main>

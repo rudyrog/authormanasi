@@ -36,7 +36,7 @@ export default function Contact() {
         className="socials fodo fixed left-5 top-1/2 -translate-y-1/2 transform font-bold text-orange-200"
         style={{
           fontSize: "36rem",
-          letterSpacing: "2rem",
+          letterSpacing: "1.2rem",
           whiteSpace: "nowrap",
         }}
       >
@@ -97,12 +97,7 @@ export default function Contact() {
         </div>
         <div className="translate-x-[55%] translate-y-[-100%] text-3xl text-white">
           <div className="card flex w-fit items-center justify-center">
-            <Link
-              href="https://github.com/rudyrog/authormanasi"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mx-3 text-7xl"
-            >
+            <Link href="/devs" className="mx-3 text-7xl">
               Developers
             </Link>
           </div>

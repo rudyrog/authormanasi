@@ -1,6 +1,4 @@
 "use client";
-import Background from "@/components/Background";
-// import Cursor from "@/components/Cursor";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -47,9 +45,6 @@ export default function Home() {
   }, [window]);
   return (
     <div className="max-h-screen overflow-hidden">
-      {/* Hidden Cursor and Background for Development Purposes */}
-      {/* <Cursor /> */}
-      {/* <Background /> */}
       <div
         style={{ zIndex: 99999 }}
         className="kbm absolute flex h-screen w-screen items-center justify-center bg-orange-200"

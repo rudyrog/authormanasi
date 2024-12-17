@@ -95,7 +95,7 @@ body {
   @apply brownbulgary rounded-lg border border-orange-200/35 bg-black/30 p-3 text-5xl backdrop-blur-md;
 }
 .navButton {
-  background-color: black;
+  background-color: transparent;
   @apply brownbulgary rounded-lg border-2 border-transparent p-1 text-lg font-medium;
   transition:
     background-color 0.8s ease,
@@ -106,4 +106,8 @@ body {
 .navButton:hover {
   background-color: rgb(226, 190, 122);
   @apply text-stone-800;
+}
+.buyButton {
+  background-color: wheat;
+  @apply brownbulgary rounded-lg px-3 py-1 text-lg font-bold text-black transition-all hover:bg-white hover:text-black;
 }
