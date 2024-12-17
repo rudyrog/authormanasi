@@ -1,14 +1,20 @@
+"use client";
 import Link from "next/link";
-import { FaHome } from "react-icons/fa";
 export default function Navigation() {
   return (
-    <div className="flex items-center justify-center gap-3 text-xl text-orange-200">
-      <Link href={"/"}>
-        <FaHome className="icon" />
+    <div
+      className="flex items-center justify-center gap-3 text-xl"
+      style={{ color: "wheat" }}
+    >
+      <Link href={"/"} className="navButton">
+        Home
       </Link>
       <div>|</div>
       <Link href={"/books"} className="navButton">
         Books
+      </Link>
+      <Link href={"/blogs"} className="navButton">
+        Blogs
       </Link>
       <Link href={"/about"} className="navButton">
         About

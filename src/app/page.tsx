@@ -1,11 +1,12 @@
 "use client";
 import Background from "@/components/Background";
-import Cursor from "@/components/Cursor";
+// import Cursor from "@/components/Cursor";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
 import Keyboard from "../components/Keyboard";
+
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function Home() {
@@ -23,7 +24,7 @@ export default function Home() {
           duration: 1,
         },
         {
-          x: "-20%",
+          x: "-25%",
           display: "block",
           duration: 1,
           delay: 1,
@@ -36,7 +37,7 @@ export default function Home() {
           duration: 1,
         },
         {
-          x: "20%",
+          x: "10%",
           display: "block",
           duration: 1,
           delay: 1,
@@ -45,9 +46,10 @@ export default function Home() {
     }, 5000);
   }, [window]);
   return (
-    <div className="max-h-screen overflow-y-hidden">
-      <Cursor />
-      <Background />
+    <div className="max-h-screen overflow-hidden">
+      {/* Hidden Cursor and Background for Development Purposes */}
+      {/* <Cursor /> */}
+      {/* <Background /> */}
       <div
         style={{ zIndex: 99999 }}
         className="kbm absolute flex h-screen w-screen items-center justify-center bg-orange-200"
@@ -64,7 +66,7 @@ export default function Home() {
               MEHTA
             </h1>
           </div>
-          <div className="image absolute left-[55%] top-72 z-0 h-96 w-52"></div>
+          <div className="image absolute left-[55%] top-52 z-0 h-56 w-52"></div>
         </div>
       </section>
     </div>

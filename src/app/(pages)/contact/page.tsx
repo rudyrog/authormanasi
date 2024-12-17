@@ -1,14 +1,13 @@
 "use client";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
 import { useEffect } from "react";
-import { CiAt } from "react-icons/ci";
-import { FaPhone } from "react-icons/fa";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Contact() {
   useEffect(() => {
-    gsap.to("#socials", {
+    gsap.to(".socials", {
       left: "-120%",
       ease: "power1.out",
       scrollTrigger: {
@@ -34,8 +33,7 @@ export default function Contact() {
   return (
     <div className="flex min-h-[300vh] items-center">
       <h1
-        id="socials"
-        className="fodo fixed left-5 top-1/2 -translate-y-1/2 transform font-bold text-orange-200"
+        className="socials fodo fixed left-5 top-1/2 -translate-y-1/2 transform font-bold text-orange-200"
         style={{
           fontSize: "36rem",
           letterSpacing: "2rem",
@@ -45,30 +43,68 @@ export default function Contact() {
         SOCIALS
       </h1>
 
-      <div className="socials-content fixed left-0 top-0 z-50 h-screen w-[300vw]">
+      <div className="socials-content fixed left-0 top-0 z-40 h-screen w-[300vw]">
         <div className="translate-x-[10%] translate-y-[100%] text-white">
           <div className="card flex w-fit items-center justify-center">
-            <CiAt style={{ fontSize: "6rem" }} />
-            <div className="mx-3 text-7xl">Facebook</div>
+            <Link
+              href="https://www.facebook.com/share/12FXr8mxH1A/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mx-3 text-7xl"
+            >
+              Facebook
+            </Link>
           </div>
         </div>
 
         <div className="translate-x-[20%] translate-y-[160%] text-3xl text-white">
           <div className="card flex w-fit items-center justify-center">
-            <CiAt style={{ fontSize: "6rem" }} />
-            <div className="mx-3 text-7xl">INSTAGRAM</div>
+            <Link
+              href="https://www.instagram.com/manasi_n_mehta"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mx-3 text-7xl"
+            >
+              Instagram
+            </Link>
           </div>
         </div>
+
         <div className="translate-x-[35%] translate-y-[-100%] text-3xl text-white">
           <div className="card flex w-fit items-center justify-center">
-            <CiAt style={{ fontSize: "6rem" }} />
-            <div className="mx-3 text-7xl">EMAIL</div>
+            <Link
+              href="https://mail.google.com/mail/?view=cm&to=mansi28november@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mx-3 text-7xl"
+            >
+              Email
+            </Link>
           </div>
         </div>
+
         <div className="translate-x-[45%] translate-y-[-90%] text-3xl text-white">
           <div className="card flex w-fit items-center justify-center">
-            <FaPhone style={{ fontSize: "6rem" }} />
-            <div className="mx-3 text-7xl">+919426704717</div>
+            <Link
+              href="https://www.linkedin.com/in/manasi-mehta-41abb9189"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mx-3 text-7xl"
+            >
+              Linkedin
+            </Link>
+          </div>
+        </div>
+        <div className="translate-x-[55%] translate-y-[-100%] text-3xl text-white">
+          <div className="card flex w-fit items-center justify-center">
+            <Link
+              href="https://github.com/rudyrog/authormanasi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mx-3 text-7xl"
+            >
+              Developers
+            </Link>
           </div>
         </div>
       </div>

@@ -6,41 +6,33 @@
   width: 5px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   background: black;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: black;
   border-radius: 2px;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: white;
 }
 
 @font-face {
-  font-family: "Morgai";
-  src: url("/fonts/morgaiRetan/morgai-retan.otf");
+  font-family: "brownbulgary";
+  src: url("/fonts/brownbulgary/BrownBulgary.ttf");
 }
 
 @font-face {
   font-family: "FODO";
   src: url("/fonts/fadou/faodudemoregular-2vl4v.otf");
 }
-
-@font-face {
-  font-family: "Mersica";
-  src: url("/fonts/merisca-font/merisca.otf");
-}
 .fodo {
   font-family: "FODO", sans-serif;
 }
-.mersica {
-  font-family: "Mersica", sans-serif;
+.brownbulgary {
+  font-family: "brownbulgary", sans-serif;
 }
 :root {
   --color: rgb(0, 0, 0);
@@ -99,12 +91,12 @@ body {
   @apply m-3 rounded-full;
 }
 .card {
-  @apply rounded-full border border-orange-200/35 bg-black/30 p-3 text-5xl text-white backdrop-blur-md;
+  color: wheat;
+  @apply brownbulgary rounded-lg border border-orange-200/35 bg-black/30 p-3 text-5xl backdrop-blur-md;
 }
 .navButton {
   background-color: black;
-  color: wheat;
-  @apply fodo rounded-3xl border-2 border-transparent p-2 text-lg font-medium;
+  @apply brownbulgary rounded-lg border-2 border-transparent p-1 text-lg font-medium;
   transition:
     background-color 0.8s ease,
     border-color 0.8s ease,
@@ -112,7 +104,19 @@ body {
 }
 
 .navButton:hover {
-  background-color: wheat;
-
-  color: black;
+  background-color: rgb(226, 190, 122);
+  @apply text-stone-800;
 }
+
+/* .buyButton {
+  color: wheat;
+  @apply brownbulgary mt-44 flex w-fit items-center justify-center rounded-lg border-2 border-transparent p-1 text-lg font-medium;
+  transition:
+    background-color 0.8s ease,
+    border-color 0.8s ease,
+    color 0.8s ease;
+}
+.buyButton:hover {
+  background-color: rgb(226, 190, 122);
+  @apply text-stone-800;
+} */
