@@ -3,7 +3,6 @@ import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
-import Link from "next/link";
 gsap.registerPlugin(ScrollTrigger);
 
 function AboutCard({
@@ -28,11 +27,12 @@ function AboutCard({
 function AboutList() {
   return (
     <div className="about-content fixed left-0 top-0 z-40 h-screen w-[300vw]">
-      <AboutCard y={10} x={20}>
+      <AboutCard y={20} x={20}>
         <Image
           src="/images/m2Image.jpg"
           alt="manasi"
-          className="h-96 w-72 rounded-3xl"
+          style={{ filter: "saturate(0)" }}
+          className="h-96 w-72 rounded-lg"
           width={400}
           height={350}
         />

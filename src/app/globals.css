@@ -42,9 +42,6 @@ body {
   background-color: var(--color);
 }
 
-/* body {
-  cursor: none;
-} */
 .image {
   background: linear-gradient(220deg, transparent, var(--color)),
     linear-gradient(to bottom, transparent, var(--color)),
@@ -109,5 +106,25 @@ body {
 }
 .buyButton {
   background-color: wheat;
-  @apply brownbulgary rounded-lg px-3 py-1 text-lg font-bold text-black transition-all hover:bg-white hover:text-black;
+  @apply brownbulgary rounded-lg border-2 border-transparent p-1 text-lg font-medium text-black;
+  transition:
+    background-color 0.8s ease,
+    border-color 0.8s ease,
+    color 0.8s ease;
+}
+
+.buyButton:hover {
+  background-color: lightgreen;
+  @apply text-stone-800;
+}
+.devLink {
+  @apply brownbulgary absolute left-16 top-40 z-50 border-b-2 border-black text-xl font-bold text-black;
+  transform: rotate(-18deg);
+  transform-origin: top left;
+}
+
+.devLink2 {
+  @apply brownbulgary absolute left-[4.6rem] top-48 z-50 border-b-2 border-black text-xl font-bold text-black;
+  transform: rotate(-18deg);
+  transform-origin: top left;
 }
