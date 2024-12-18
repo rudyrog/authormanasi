@@ -7,31 +7,34 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Contact() {
   useEffect(() => {
-    gsap.to(".socials", {
-      left: "-120%",
-      ease: "power1.out",
-      scrollTrigger: {
-        trigger: "body",
-        start: "top top",
-        end: "+=400%",
-        scrub: 1.5,
-      },
-    });
+    if (typeof window !== "undefined") {
+      const isPhone = window.innerWidth <= 768;
+      gsap.to(".socials", {
+        left: isPhone ? "-500%" : "-120%",
+        ease: "power1.out",
+        scrollTrigger: {
+          trigger: "body",
+          start: "top top",
+          end: isPhone ? "+=250%" : "+=400%",
+          scrub: 1.5,
+        },
+      });
 
-    gsap.to(".socials-content", {
-      left: "-130%",
-      ease: "power1.out",
-      scrollTrigger: {
-        trigger: "body",
-        start: "top top",
-        end: "+=250%",
-        scrub: 1.5,
-      },
-    });
+      gsap.to(".socials-content", {
+        left: isPhone ? "-200%" : "-130%",
+        ease: "power1.out",
+        scrollTrigger: {
+          trigger: "body",
+          start: "top top",
+          end: isPhone ? "+=250%" : "+=250%",
+          scrub: 1.5,
+        },
+      });
+    }
   }, [window]);
 
   return (
-    <div className="flex min-h-[300vh] items-center">
+    <div className="flex min-h-[300vh] items-center md:min-h-[300vh]">
       <h1
         className="socials fodo fixed left-5 top-1/2 -translate-y-1/2 transform font-bold text-orange-200"
         style={{
@@ -44,7 +47,7 @@ export default function Contact() {
       </h1>
 
       <div className="socials-content fixed left-0 top-0 z-40 h-screen w-[300vw]">
-        <div className="translate-x-[10%] translate-y-[100%] text-white">
+        <div className="translate-x-0 translate-y-[100%] scale-100 text-white md:translate-x-[10%] md:scale-100">
           <div className="card flex w-fit items-center justify-center">
             <Link
               href="https://www.facebook.com/share/12FXr8mxH1A/"
@@ -57,7 +60,7 @@ export default function Contact() {
           </div>
         </div>
 
-        <div className="translate-x-[20%] translate-y-[160%] text-3xl text-white">
+        <div className="translate-x-20 translate-y-[160%] scale-100 text-3xl text-white md:translate-x-[20%] md:scale-100">
           <div className="card flex w-fit items-center justify-center">
             <Link
               href="https://www.instagram.com/manasi_n_mehta"
@@ -70,7 +73,7 @@ export default function Contact() {
           </div>
         </div>
 
-        <div className="translate-x-[35%] translate-y-[-100%] text-3xl text-white">
+        <div className="translate-x-20 translate-x-60 translate-y-[200%] scale-100 text-3xl text-white md:translate-x-[35%] md:translate-y-[-100%] md:scale-100">
           <div className="card flex w-fit items-center justify-center">
             <Link
               href="https://mail.google.com/mail/?view=cm&to=mansi28november@gmail.com"
@@ -83,7 +86,7 @@ export default function Contact() {
           </div>
         </div>
 
-        <div className="translate-x-[45%] translate-y-[-90%] text-3xl text-white">
+        <div className="translate-x-80 translate-y-[250%] scale-100 text-3xl text-white md:translate-x-[45%] md:translate-y-[-90%] md:scale-100">
           <div className="card flex w-fit items-center justify-center">
             <Link
               href="https://www.linkedin.com/in/manasi-mehta-41abb9189"
@@ -95,7 +98,7 @@ export default function Contact() {
             </Link>
           </div>
         </div>
-        <div className="translate-x-[55%] translate-y-[-100%] text-3xl text-white">
+        <div className="translate-x-[35rem] translate-y-[-100%] scale-100 text-3xl text-white md:translate-x-[55%] md:scale-100">
           <div className="card flex w-fit items-center justify-center">
             <Link href="/devs" className="mx-3 text-7xl">
               Developers

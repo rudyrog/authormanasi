@@ -51,7 +51,7 @@ export default function Home() {
       >
         <Keyboard />
       </div>
-      <section className="flex h-screen items-center justify-center overflow-y-hidden">
+      <section className="flex h-[80vh] items-center justify-center overflow-y-hidden md:h-screen">
         <div className="flex flex-row items-center space-x-8">
           <div className="relative z-10 flex flex-col">
             <h1 id="mansi" className="fname title -translate-x-16">
