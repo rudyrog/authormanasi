@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Welcome to My Blog!
 
-## Getting Started
+Hi there! I'm **Manasi Mehta**, a student and part-time blogger from Ahmedabad, Gujarat. I'm thrilled to have you here and can't wait to share my thoughts and experiences with you. My blog is a space where I hope to spark curiosity and provide fresh perspectives as we explore different topics together.
 
-First, run the development server:
+## About Me
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+I love diving into a wide range of subjects—whether it’s learning languages, exploring the complexities of society, or sharing insights on personal growth, I write about things that inspire reflection and progress. Creativity is at the heart of everything I do, and I believe in the power of expression to connect us all.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Things I Love
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+In my free time, you’ll often find me:
+- **Writing** about anything that sparks my imagination
+- **Cooking** and experimenting with new flavors
+- **Reading** new books and stories (I'm a huge fan of literature!)
+- **Painting** to express my creativity
+- **Practicing public speaking** to share my ideas with the world
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Music & Books
 
-## Learn More
+- When it comes to **music**, I enjoy a variety of genres:
+  - Soothing tunes
+  - 90’s classics
+  - Party vibes
+  - And of course, K-pop—because I love having the perfect soundtrack for every mood!
 
-To learn more about Next.js, take a look at the following resources:
+- **Books** are my escape, and I’m always diving into something new. Some of my favorites include:
+  - *One Indian Girl* by Chetan Bhagat
+  - *Ikigai* by Hector Garcia and Francesc Miralles
+  - *Attitude is Everything* by Jeff Keller
+  - The *Sidney Sheldon* series
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## My Blog's Mission
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Through my blogs, I aim to:
+- Encourage self-improvement and personal growth
+- Share valuable life lessons
+- Celebrate the beauty of diversity
 
-## Deploy on Vercel
+This space is for anyone looking to reflect, grow, and be inspired. Join me on this journey, and let’s grow together!
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Feel free to reach out, leave comments, or just explore! I'm excited to have you along for the ride.
