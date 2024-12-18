@@ -1,4 +1,4 @@
-# Welcome to My Blog!
+# Welcome to My Portfolio!
 
 Hi there! I'm **Manasi Mehta**, a student and part-time blogger from Ahmedabad, Gujarat. I'm thrilled to have you here and can't wait to share my thoughts and experiences with you. My blog is a space where I hope to spark curiosity and provide fresh perspectives as we explore different topics together.
 
