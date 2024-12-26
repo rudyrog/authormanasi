@@ -20,6 +20,13 @@
 }
 
 @font-face {
+  font-family: "Aptos";
+  src: url("/fonts/aptos/Aptos.ttf");
+}
+.aptos {
+  font-family: "Aptos", sans-serif;
+}
+@font-face {
   font-family: "brownbulgary";
   src: url("/fonts/brownbulgary/BrownBulgary.ttf");
 }
@@ -28,6 +35,7 @@
   font-family: "FODO";
   src: url("/fonts/fadou/faodudemoregular-2vl4v.otf");
 }
+
 .fodo {
   font-family: "FODO", sans-serif;
 }
@@ -118,13 +126,13 @@ body {
   @apply text-stone-800;
 }
 .devLink {
-  @apply brownbulgary absolute left-16 top-40 z-50 border-b-2 border-black text-xl font-bold text-black;
+  @apply aptos absolute left-8 top-20 z-50 scale-50 border-b-2 border-black text-xs font-bold text-black md:left-16 md:top-40 md:scale-100 md:text-xl;
   transform: rotate(-18deg);
   transform-origin: top left;
 }
 
 .devLink2 {
-  @apply brownbulgary absolute left-[4.6rem] top-48 z-50 border-b-2 border-black text-xl font-bold text-black;
+  @apply aptos absolute left-10 top-24 z-50 scale-50 border-b-2 border-black text-xs font-bold text-black md:left-[4.6rem] md:top-48 md:scale-100 md:text-xl;
   transform: rotate(-18deg);
   transform-origin: top left;
 }

@@ -12,6 +12,10 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        aptos: ["Aptos", "sans-serif"],
+        brownbulgary: ["brownbulgary", "sans-serif"],
+      },
     },
   },
   plugins: [],

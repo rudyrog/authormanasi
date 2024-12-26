@@ -2,41 +2,44 @@
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 gsap.registerPlugin(ScrollTrigger);
 
 function BlogCard({
+  isMobile,
   title,
   description,
   date,
   imageUrl,
   x,
 }: {
-  title: string;
+  isMobile: any;
+  title: any;
   description: any;
   date: string;
   imageUrl: string;
   x: number;
 }) {
+  console.log("IS mobile", isMobile.isMobile);
   return (
     <div
-      style={{ transform: `translateX(${x}%)` }}
-      className={`Blog translate-y-[0%] bg-black/50 text-white backdrop-blur-md`}
+      style={isMobile.isMobile ? {} : { transform: `translateX(${x + "%"})` }}
+      className={`Blog bg-black/50 py-5 text-white backdrop-blur-md md:translate-y-[0%] md:py-0`}
     >
-      <div className="flex h-[95%] w-fit items-center justify-stretch gap-5">
+      <div className="flex w-fit flex-col items-center justify-stretch gap-1 md:h-[95%] md:flex-row md:gap-5">
         <Image
           alt="BlogImg"
           src={imageUrl}
           width={300}
           height={200}
-          className="aspect-[4/5] rounded-lg"
+          className="mt-8 aspect-[4/5] rounded-lg md:m-0"
         />
-        <div className="flex flex-col gap-3 p-5 py-20">
-          <div className="fodo text-7xl" style={{ color: "wheat" }}>
+        <div className="flex flex-col gap-3 p-1 py-3 text-center md:p-5 md:py-20 md:text-start">
+          <div className="fodo text-5xl md:text-7xl" style={{ color: "wheat" }}>
             {title}
           </div>
-          <div className="brownbulgary">{description}</div>
+          <div className="aptos">{description}</div>
           <div className="brownbulgary text-orange-200/80">{date}</div>
         </div>
       </div>
@@ -44,62 +47,103 @@ function BlogCard({
   );
 }
 
-function BlogsList() {
+function BlogsList(isMobile: any) {
   return (
-    <div className="blogs-content fixed left-0 top-0 z-40 flex h-screen w-[300vw] flex-row">
+    <div className="blogs-content flex flex-col md:fixed md:left-0 md:top-0 md:z-40 md:h-screen md:w-[300vw] md:flex-row">
       <BlogCard
+        isMobile={isMobile}
         x={100}
-        title="Balancing Truth & Tact"
+        title={
+          <Link
+            href={
+              "https://manasimehta28.blogspot.com/2024/06/balancing-truth-and-tact.html"
+            }
+          >
+            Balancing Truth & Tact
+          </Link>
+        }
         description={
           <>
             {" "}
-            Discover a world where
-            <br /> honesty meets kindness in the art of communication.
-            <br /> Where Honesty Meets Respect
-            <br /> is a thoughtful reflection on how our words can shape others,
-            <br /> emphasizing the beauty of constructive feedback and
-            compassion.
+            Discover a world where honesty and kindness
+            <br /> come together in the art of communication.
+            <br /> Where Honesty Meets Respect is a thoughtful reflection
+            <br /> on the profound impact our words can have on others.
+            <br /> It highlights the importance of constructive feedback,
+            <br /> emphasizing how compassion and empathy
+            <br /> can transform our interactions.
+            <br />
           </>
         }
         imageUrl="/images/bekindImg.jpg"
         date={"29 JUN 2024"}
       />
       <BlogCard
-        x={120}
-        title="Books That Made My 22"
+        isMobile={isMobile}
+        x={110}
+        title={
+          <Link
+            href={
+              "https://manasimehta28.blogspot.com/2023/02/books-that-made-my-2022.html"
+            }
+          >
+            Books That Made My 22
+          </Link>
+        }
         description={
           <>
             {" "}
-            Welcome to a world where
-            <br /> words transport you across time, genres, and emotions.
-            <br /> For the Love of Books
-            <br /> is a handpicked guide to some of the most beautiful reads,
-            <br /> spanning romance, thrillers, fiction, biographies, and more.
+            Welcome to a world where words transport you
+            <br /> across time, genres, and emotions.
+            <br /> For the Love of Books is a handpicked guide
+            <br /> to some of the most beautiful reads,
+            <br /> spanning romance, thrillers, fiction, biographies,
+            <br /> and so much more.
+            <br />
           </>
         }
         imageUrl="/images/blog2Img.jpg"
         date={"1 FEB 2023"}
       />
       <BlogCard
+        isMobile={isMobile}
         x={100}
-        title="Journey of Learning English From Scratch"
+        title={
+          <Link
+            href={
+              "https://manasimehta28.blogspot.com/2021/11/my-journey-of-learning-english-from.html"
+            }
+          >
+            Learning English from Scratch
+          </Link>
+        }
         description={
           <>
             {" "}
-            Step into a journey where
-            <br /> words unlock opportunities and confidence takes flight.
-            <br /> The Language of Possibilities
-            <br /> is a heartfelt story of overcoming <br />
-            barriers and embracing English,
-            <br /> from humble beginnings to a world of endless communication.
+            Step into a journey where words unlock
+            <br /> opportunities and confidence takes flight.
+            <br /> The Language of Possibilities is a heartfelt story
+            <br /> of overcoming barriers and embracing English,
+            <br /> from humble beginnings to a world
+            <br /> of endless communication.
+            <br />
           </>
         }
         imageUrl="/images/blog3Img.jpg"
         date={"15 NOV 2021"}
       />
       <BlogCard
+        isMobile={isMobile}
         x={150}
-        title="The Indian Economy"
+        title={
+          <Link
+            href={
+              "https://manasimehta28.blogspot.com/2021/08/the-indian-economy.html"
+            }
+          >
+            The Indian Economy
+          </Link>
+        }
         description={
           <>
             {" "}
@@ -107,20 +151,20 @@ function BlogsList() {
             <br /> the past struggles fuel the future’s progress.
             <br /> The Indian Economy: A Tale of Growth and Resilience
             <br /> takes you through India’s evolution from colonial struggles
-            to its rise as a global economic power,
-            <br /> with a look at its diverse history, challenges, and
-            ever-growing potential.
+            <br /> to its rise as a global economic power, with a look
+            <br /> at its diverse history, challenges, and ever-growing
+            potential.
           </>
         }
         imageUrl="/images/blog4Image.jpg"
         date={"04 Aug 2021"}
       />
 
-      <div className="translate-x-[360%] translate-y-[30%] text-white">
+      <div className="text-center text-white md:translate-x-[360%] md:translate-y-[30%] md:text-start">
         <Link
           target="_blank"
           href="https://manasimehta28.blogspot.com"
-          className="fodo text-7xl underline"
+          className="fodo text-5xl underline md:text-7xl"
         >
           read more blogs
         </Link>
@@ -130,6 +174,17 @@ function BlogsList() {
 }
 
 export default function Blogs() {
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 1000);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
   useEffect(() => {
     gsap.to(".blogs", {
       left: "-120%",
@@ -155,17 +210,16 @@ export default function Blogs() {
   }, [window]);
 
   return (
-    <div className="flex min-h-[400vh] items-center">
+    <div className="flex flex-col items-center p-5 pb-32 md:min-h-[400vh] md:flex-row md:p-0">
       <h1
-        className="blogs fodo fixed left-20 top-1/2 -translate-y-1/2 transform font-bold text-orange-200"
+        className="blogs fodo my-5 text-7xl font-bold text-orange-200 md:fixed md:left-28 md:top-1/2 md:my-0 md:-translate-y-1/2 md:text-[12rem]"
         style={{
-          fontSize: "12rem",
           whiteSpace: "nowrap",
         }}
       >
         Blogs
       </h1>
-      <BlogsList />
+      <BlogsList isMobile={isMobile} />
     </div>
   );
 }

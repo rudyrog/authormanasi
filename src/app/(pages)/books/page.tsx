@@ -18,16 +18,16 @@ function BookCard({
   imageUrl: string;
 }) {
   return (
-    <div className="book translate-x-[20%] translate-y-[10%] text-white">
-      <div className="flex w-fit items-start justify-center gap-5">
+    <div className="book text-white md:translate-x-[20%] md:translate-y-[10%]">
+      <div className="flex w-fit flex-col items-center justify-center gap-5 md:flex-row md:items-start">
         <Image
           alt="BookImg"
           src={imageUrl}
           width={300}
           height={300}
-          className="rounded-lg"
+          className="mt-8 rounded-lg md:m-0"
         />
-        <div className="flex flex-col gap-3 p-5 py-20">
+        <div className="flex flex-col gap-3 p-5 py-20 text-center md:text-start">
           <div className="fodo text-7xl" style={{ color: "wheat" }}>
             {title}
           </div>
@@ -44,7 +44,7 @@ function BookCard({
 
 function BooksList() {
   return (
-    <div className="novels-content fixed left-0 top-0 z-40 h-screen w-[300vw]">
+    <div className="novels-content md: fixed z-40 md:left-0 md:top-0 md:h-screen md:w-[300vw]">
       <BookCard
         title="The India Story"
         description={
@@ -60,8 +60,10 @@ function BooksList() {
         imageUrl="/images/BookImg.jpg"
         date={"23 NOV 2024"}
       />
-      <div className="translate-x-[40%] translate-y-[-100%] text-white">
-        <div className="fodo text-7xl">...more coming soon!</div>
+      <div className="text-white md:translate-x-[40%] md:translate-y-[-100%]">
+        <div className="fodo text-center text-3xl md:text-start md:text-7xl">
+          more coming soon!
+        </div>
       </div>
     </div>
   );
@@ -113,11 +115,10 @@ export default function Books() {
   }, [isMobile, window]);
 
   return (
-    <div className="flex min-h-[200vh] items-center">
+    <div className="flex flex-col items-center p-5 pb-32 md:min-h-[200vh] md:flex-row md:p-0">
       <h1
-        className="novels fodo fixed left-20 top-1/2 -translate-y-1/2 transform font-bold text-orange-200"
+        className="novels fodo text-7xl font-bold text-orange-200 md:fixed md:left-20 md:top-1/2 md:-translate-y-1/2 md:text-[12rem]"
         style={{
-          fontSize: "12rem",
           whiteSpace: "nowrap",
         }}
       >

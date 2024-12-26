@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,27 +10,34 @@ function AboutCard({
   y,
   x,
   children,
+  isMobile,
 }: {
   y: number;
   x: number;
   children: React.ReactNode;
+  isMobile: any;
 }) {
+  console.log(isMobile);
   return (
     <div
       className="book text-white"
-      style={{
-        transform: `translateX(${x}%) translateY(${y}%)`,
-      }}
+      style={
+        !isMobile.isMobile
+          ? {
+              transform: `translateX(${x}%) translateY(${y}%)`,
+            }
+          : {}
+      }
     >
       {children}
     </div>
   );
 }
 
-function AboutList() {
+function AboutList(isMobile: any) {
   return (
-    <div className="about-content fixed left-0 top-0 z-40 h-screen w-[300vw] sm:w-[100vw] md:w-[200vw]">
-      <AboutCard y={30} x={25}>
+    <div className="about-content sm:w-[100vw] md:fixed md:left-0 md:top-0 md:z-40 md:h-screen md:w-[200vw]">
+      <AboutCard y={30} x={28} isMobile={isMobile}>
         <Image
           src="/images/m2Image.jpg"
           alt="manasi"
@@ -40,50 +47,54 @@ function AboutList() {
           height={450}
         />
       </AboutCard>
-      <AboutCard y={-70} x={40}>
+      <AboutCard y={-70} isMobile={isMobile} x={40}>
         <div className="relative">
           <Image
-            className="rotate-[-6deg]"
+            className="md:rotate-[-6deg]"
             src="/images/paper.png"
             alt="paper"
             width={510}
             height={500}
           />
-          <div className="brownbulgary absolute left-7 top-[25vh] w-[30vw] rotate-[-6deg] text-lg font-bold text-black sm:w-[90%] md:w-[40vw]">
-            Hi there! I’m Manasi Mehta, a student and part-time <br />
-            blogger from Ahmedabad, Gujarat. Welcome to my <br />
-            blog! I’m excited to share my thoughts and <br />
-            experiences with you, and I hope to spark curiosity <br />
-            and provide fresh perspectives as we explore <br />
-            different topics together.
+          <div className="aptos absolute left-8 top-24 w-[85%] text-black sm:w-[90%] md:left-10 md:top-[25vh] md:w-[30vw] md:rotate-[-6deg] md:text-lg">
+            Hi there! I’m Manasi Mehta, a student
+            <br />
+            and part-time blogger from Ahmedabad, Gujarat. Welcome to my blog!
+            <br /> I’m excited to share my thoughts and experiences with you,
+            sparking
+            <br /> curiosity and providing fresh perspectives
+            <br /> as we explore different topics together.
+            <br />
           </div>
         </div>
       </AboutCard>
-      <AboutCard y={-170} x={60}>
+      <AboutCard isMobile={isMobile} y={-170} x={60}>
         <div className="relative">
           <Image
-            className="rotate-[6deg]"
+            className="md:rotate-[6deg]"
             src="/images/paper.png"
             alt="paper"
             width={525}
             height={500}
           />
-          <div className="brownbulgary absolute left-10 top-[25vh] w-[30vw] rotate-[6deg] text-lg font-bold text-black sm:w-[90%] md:w-[40vw]">
-            In my free time, I’m usually writing, cooking, reading,
-            <br /> painting, or practicing public speaking. I find joy in <br />
-            the little things and love how creative expression connects us all.
+          <div className="aptos absolute left-8 top-24 w-[85%] text-black sm:w-[90%] md:left-10 md:top-[25vh] md:w-[30vw] md:rotate-[6deg] md:text-lg">
+            In my free time, I’m usually writing, cooking, reading, painting, or
+            <br /> practicing public speaking. <br /> I find joy in the little
+            things and love <br /> how creative expression connects us all{" "}
+            <br />
+            and makes society as a whole a better place.
           </div>
         </div>
       </AboutCard>
-      <AboutCard y={-270} x={80}>
+      <AboutCard isMobile={isMobile} y={-270} x={80}>
         <div className="relative">
           <Image src="/images/paper.png" alt="paper" width={510} height={500} />
-          <div className="brownbulgary absolute left-10 top-[25vh] w-[30vw] text-lg font-bold text-black sm:w-[90%] md:w-[40vw]">
-            Books are my escape, and I’m always diving into a <br />
-            new one. Through my blogs, I aim to encourage <br /> others to
-            embrace self-improvement, share <br />
-            valuable life lessons, and celebrate the beauty <br />
-            of diversity.
+          <div className="absolute left-8 top-24 w-[85%] text-black sm:w-[90%] md:left-10 md:top-[25vh] md:w-[30vw] md:text-lg">
+            Books are my escape, and I’m always diving into a new one.
+            <br /> Through my blogs, I aim to encourage others to embrace
+            self-improvement, share valuable life lessons, and celebrate
+            <br />
+            the beauty of diversity.
           </div>
         </div>
       </AboutCard>
@@ -92,46 +103,52 @@ function AboutList() {
 }
 
 export default function Books() {
-  1;
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const isPhone = window.innerWidth <= 768;
-      gsap.to(".about", {
-        left: isPhone ? "-300%" : "-120%",
-        ease: "power1.out",
-        scrollTrigger: {
-          trigger: "body",
-          start: "top top",
-          end: isPhone ? "+=200%" : "+=400%",
-          scrub: 1.5,
-        },
-      });
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
-      gsap.to(".about-content", {
-        left: isPhone ? "-100%" : "-190%",
-        ease: "power1.out",
-        scrollTrigger: {
-          trigger: "body",
-          start: "top top",
-          end: isPhone ? "+=200%" : "+=350%",
-          scrub: 1.5,
-        },
-      });
-    }
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 1000);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
+  useEffect(() => {
+    gsap.to(".about", {
+      left: "-120%",
+      ease: "power1.out",
+      scrollTrigger: {
+        trigger: "body",
+        start: "top top",
+        end: "+=400%",
+        scrub: 1.5,
+      },
+    });
+
+    gsap.to(".about-content", {
+      left: "-190%",
+      ease: "power1.out",
+      scrollTrigger: {
+        trigger: "body",
+        start: "top top",
+        end: "+=350%",
+        scrub: 1.5,
+      },
+    });
+  }, [window]);
 
   return (
-    <div className="flex min-h-[300vh] items-center">
+    <div className="flex flex-col items-center p-5 md:min-h-[300vh] md:flex-row md:p-0">
       <h1
-        className="about fodo fixed left-20 top-1/2 -translate-y-1/2 transform font-bold text-orange-200"
+        className="about fodo py-10 text-7xl font-bold text-orange-200 md:fixed md:left-20 md:top-1/2 md:-translate-y-1/2 md:py-0 md:text-[12rem]"
         style={{
-          fontSize: "12rem",
           whiteSpace: "nowrap",
         }}
       >
         Author
       </h1>
-      <AboutList />
+      <AboutList isMobile={isMobile} />
     </div>
   );
 }

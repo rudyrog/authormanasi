@@ -1,8 +1,9 @@
 "use client";
+import { FaInstagram } from "react-icons/fa";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 
@@ -29,7 +30,7 @@ function DevCard({
 
 function DevList() {
   return (
-    <div className="devs-content fixed left-0 top-0 z-40 h-screen w-[300vw]">
+    <div className="devs-content top-0 z-40 w-[110vw] translate-x-[-28%] md:fixed md:left-0 md:h-screen md:w-[300vw] md:translate-x-0">
       <DevCard y={20} x={28}>
         <div className="relative">
           <Image
@@ -68,6 +69,17 @@ function DevList() {
 }
 
 export default function Books() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
   useEffect(() => {
     gsap.to(".devs", {
       left: "-120%",
@@ -93,17 +105,42 @@ export default function Books() {
   }, [window]);
 
   return (
-    <div className="flex min-h-[300vh] items-center">
+    <div className="flex flex-col items-center p-10 md:min-h-[300vh] md:flex-row md:p-0">
       <h1
-        className="devs fodo fixed left-20 top-1/2 -translate-y-1/2 transform font-bold text-orange-200"
+        className="devs fodo text-5xl font-bold text-orange-200 md:fixed md:left-20 md:top-1/2 md:-translate-y-1/2 md:text-[12rem]"
         style={{
-          fontSize: "12rem",
           whiteSpace: "nowrap",
         }}
       >
         Developers
       </h1>
       <DevList />
+      {isMobile && (
+        <>
+          <div className="card flex w-fit translate-y-20 items-center justify-center">
+            <Link
+              href="https://www.instagram.com/rudrameh06"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mx-3 flex items-center justify-center gap-2 text-4xl"
+            >
+              <FaInstagram />
+              Rudra Mehta
+            </Link>
+          </div>
+          <div className="card flex w-fit translate-y-24 items-center justify-center">
+            <Link
+              href="https://www.instagram.com/calligraphic_parv"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mx-3 flex items-center justify-center gap-2 text-4xl"
+            >
+              <FaInstagram />
+              Parv Shah
+            </Link>
+          </div>
+        </>
+      )}
     </div>
   );
 }

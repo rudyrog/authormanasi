@@ -50,9 +50,9 @@ export default function Navigation() {
         />
       </div>
 
-      <div className="fixed bottom-10 left-1/2 z-50 -translate-x-1/2 transform">
+      <div className="fixed bottom-0 left-1/2 z-50 -translate-x-1/2 transform from-black to-transparent md:bottom-10 md:bg-gradient-to-t">
         <div
-          className="relative z-[51] flex items-center justify-center gap-3 text-xl"
+          className="relative z-[51] flex items-center justify-center gap-3 py-5 text-xl"
           style={{ color: "wheat" }}
         >
           <Link

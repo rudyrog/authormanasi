@@ -8,7 +8,6 @@ import Keyboard from "../components/Keyboard";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function Home() {
-  // GSAP effect (running animation)
   useEffect(() => {
     setTimeout(() => {
       gsap.to(".kbm", {
@@ -53,7 +52,7 @@ export default function Home() {
       >
         <Keyboard />
       </div>
-      <section className="flex h-[80vh] items-center justify-center overflow-y-hidden md:h-screen">
+      <section className="flex h-[80vh] items-center justify-center">
         <div className="flex flex-row items-center space-x-8">
           <div className="relative z-10 flex flex-col">
             <h1 id="mansi" className="fname title -translate-x-16">
@@ -63,7 +62,7 @@ export default function Home() {
               MEHTA
             </h1>
           </div>
-          <div className="image absolute left-[55%] top-52 z-0 h-56 w-52"></div>
+          <div className="image absolute top-36 h-36 w-36 -translate-x-14 md:left-[55%] md:top-52 md:h-56 md:w-60"></div>
         </div>
       </section>
     </>
