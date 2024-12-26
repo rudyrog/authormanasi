@@ -1,9 +1,9 @@
 "use client";
-import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 gsap.registerPlugin(ScrollTrigger);
 
 function BookCard({
@@ -68,29 +68,49 @@ function BooksList() {
 }
 
 export default function Books() {
-  useEffect(() => {
-    gsap.to(".novels", {
-      left: "-120%",
-      ease: "power1.out",
-      scrollTrigger: {
-        trigger: "body",
-        start: "top top",
-        end: "+=400%",
-        scrub: 1.5,
-      },
-    });
+  const [isMobile, setIsMobile] = useState(false);
 
-    gsap.to(".novels-content", {
-      left: "-130%",
-      ease: "power1.out",
-      scrollTrigger: {
-        trigger: "body",
-        start: "top top",
-        end: "+=250%",
-        scrub: 1.5,
-      },
-    });
-  }, [window]);
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  useEffect(() => {
+    if (!isMobile) {
+      gsap.to(".novels", {
+        left: "-120%",
+        ease: "power1.out",
+        scrollTrigger: {
+          trigger: "body",
+          start: "top top",
+          end: "+=400%",
+          scrub: 1.5,
+        },
+      });
+
+      gsap.to(".novels-content", {
+        left: "-130%",
+        ease: "power1.out",
+        scrollTrigger: {
+          trigger: "body",
+          start: "top top",
+          end: "+=250%",
+          scrub: 1.5,
+        },
+      });
+    } else {
+      gsap.killTweensOf(".novels");
+      gsap.killTweensOf(".novels-content");
+
+      document.querySelector(".novels-content")?.classList.remove("fixed");
+      document.querySelector(".novels-content")?.classList.add("relative");
+    }
+  }, [isMobile, window]);
 
   return (
     <div className="flex min-h-[200vh] items-center">

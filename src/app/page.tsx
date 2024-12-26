@@ -1,58 +1,49 @@
 "use client";
-import { useEffect, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect } from "react";
 import Keyboard from "../components/Keyboard";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function Home() {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    // Check if window is available (i.e., ensure client-side execution)
-    setIsClient(true);
-  }, []);
-
   // GSAP effect (running animation)
   useEffect(() => {
-    if (isClient) {
-      setTimeout(() => {
-        gsap.to(".kbm", {
-          y: "-100%",
-          display: "none",
+    setTimeout(() => {
+      gsap.to(".kbm", {
+        y: "-100%",
+        display: "none",
+        duration: 1,
+      });
+      gsap.fromTo(
+        "#mansi",
+        {
+          x: "0",
           duration: 1,
-        });
-        gsap.fromTo(
-          "#mansi",
-          {
-            x: "0",
-            duration: 1,
-          },
-          {
-            x: "-25%",
-            display: "block",
-            duration: 1,
-            delay: 1,
-          },
-        );
-        gsap.fromTo(
-          "#mehta",
-          {
-            x: "0%",
-            duration: 1,
-          },
-          {
-            x: "10%",
-            display: "block",
-            duration: 1,
-            delay: 1,
-          },
-        );
-      }, 5000);
-    }
-  }, [isClient]);
+        },
+        {
+          x: "-25%",
+          display: "block",
+          duration: 1,
+          delay: 1,
+        },
+      );
+      gsap.fromTo(
+        "#mehta",
+        {
+          x: "0%",
+          duration: 1,
+        },
+        {
+          x: "10%",
+          display: "block",
+          duration: 1,
+          delay: 1,
+        },
+      );
+    }, 5000);
+  }, [window]);
 
   return (
     <>
