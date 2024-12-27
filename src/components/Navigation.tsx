@@ -39,14 +39,14 @@ export default function Navigation() {
     <>
       <div
         ref={overlayRef}
-        className="absolute top-[-150%] z-[50] h-[100vh] w-[100vw]"
+        className="absolute top-[-150%] z-[50] h-[90vh] w-[100vw]"
       >
         <Image
           src="/tran.svg"
           alt="bg"
           height={300}
           width={600}
-          className="w-[100vw]"
+          className="opacity-0 md:w-[100vw] md:opacity-100"
         />
       </div>
 
