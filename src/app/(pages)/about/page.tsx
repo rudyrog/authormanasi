@@ -89,7 +89,7 @@ function AboutList(isMobile: any) {
       <AboutCard isMobile={isMobile} y={-270} x={80}>
         <div className="relative">
           <Image src="/images/paper.png" alt="paper" width={510} height={500} />
-          <div className="absolute left-8 top-24 w-[85%] text-black sm:w-[90%] md:left-10 md:top-[25vh] md:w-[30vw] md:text-lg">
+          <div className="aptos absolute left-8 top-24 w-[85%] text-black sm:w-[90%] md:left-10 md:top-[25vh] md:w-[30vw] md:text-lg">
             Books are my escape, and I’m always diving into a new one.
             <br /> Through my blogs, I aim to encourage others to embrace
             self-improvement, share valuable life lessons, and celebrate
