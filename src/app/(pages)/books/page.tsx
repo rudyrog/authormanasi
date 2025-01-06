@@ -18,27 +18,33 @@ function BookCard({
   imageUrl: string;
 }) {
   return (
-    <div className="book text-white md:translate-x-[20%] md:translate-y-[10%]">
-      <div className="flex w-fit flex-col items-center justify-center gap-5 md:flex-row md:items-start">
-        <Image
-          alt="BookImg"
-          src={imageUrl}
-          width={300}
-          height={300}
-          className="mt-8 rounded-lg md:m-0"
-        />
-        <div className="flex flex-col gap-3 p-5 py-20 text-center md:text-start">
-          <div className="fodo text-7xl" style={{ color: "wheat" }}>
-            {title}
+    <>
+      <div className="book text-white md:translate-x-[20%] md:translate-y-[10%]">
+        <div className="flex w-fit flex-col items-center justify-center gap-5 md:flex-row md:items-start">
+          <Image
+            alt="BookImg"
+            src={imageUrl}
+            width={300}
+            height={300}
+            className="mt-8 rounded-lg md:m-0"
+          />
+          <div className="flex flex-col gap-3 p-5 py-20 text-center md:text-start">
+            <div className="fodo text-7xl" style={{ color: "wheat" }}>
+              {title}
+            </div>
+            <div className="brownbulgary">{description}</div>
+            <div className="brownbulgary text-orange-200/80">{date}</div>
+            <Link
+              href={"https://amzn.in/d/6efa52m"}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="buyButton">Buy Now</button>
+            </Link>
           </div>
-          <div className="brownbulgary">{description}</div>
-          <div className="brownbulgary text-orange-200/80">{date}</div>
-          <Link href={"https://amzn.in/d/6efa52m"}>
-            <button className="buyButton">Buy Now</button>
-          </Link>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
@@ -125,6 +131,11 @@ export default function Books() {
         Novels
       </h1>
       <BooksList />
+      {!isMobile && (
+        <div className="alert fixed right-0 top-0 mr-3 mt-3 w-fit rounded-md border border-white/60 px-3 py-0.5 text-center text-sm text-white/60">
+          Scroll Up
+        </div>
+      )}
     </div>
   );
 }

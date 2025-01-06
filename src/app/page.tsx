@@ -41,6 +41,14 @@ export default function Home() {
           delay: 1,
         },
       );
+      gsap.fromTo(
+        ".alert",
+        {
+          y: "100%",
+          duration: 1,
+        },
+        { y: "0", duration: 1, delay: 2 },
+      );
     }, 5000);
   }, [window]);
 
@@ -62,7 +70,7 @@ export default function Home() {
               MEHTA
             </h1>
           </div>
-          <div className="image absolute top-36 h-36 w-36 -translate-x-14 md:left-[55%] md:top-52 md:h-56 md:w-60"></div>
+          <div className="image absolute right-0 top-36 h-36 w-36 -translate-x-14 md:left-[55%] md:top-52 md:h-56 md:w-60"></div>
         </div>
       </section>
     </>

@@ -21,7 +21,6 @@ function BlogCard({
   imageUrl: string;
   x: number;
 }) {
-  console.log("IS mobile", isMobile.isMobile);
   return (
     <div
       style={isMobile.isMobile ? {} : { transform: `translateX(${x + "%"})` }}

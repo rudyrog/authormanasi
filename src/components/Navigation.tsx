@@ -50,10 +50,16 @@ export default function Navigation() {
         />
       </div>
 
-      <div className="fixed bottom-0 left-1/2 z-50 -translate-x-1/2 transform from-black to-transparent md:bottom-10 md:bg-gradient-to-t">
+      <div className="fixed bottom-0 left-1/2 z-50 -translate-x-1/2 md:bottom-10">
         <div
-          className="relative z-[51] flex items-center justify-center gap-3 py-5 text-xl"
-          style={{ color: "wheat" }}
+          className="relative z-[51] flex transform items-center justify-center gap-3 py-5 text-lg"
+          style={{
+            color: "wheat",
+            background:
+              "linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)",
+            paddingBottom: "2rem",
+            paddingTop: "2rem",
+          }}
         >
           <Link
             href="/"
