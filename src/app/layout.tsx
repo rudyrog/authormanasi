@@ -1,5 +1,6 @@
 import Navigation from "../components/Navigation";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function RootLayout({
   children,
@@ -9,6 +10,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <Analytics />
         <title>Manasi Mehta</title>
         <meta
           name="description"
