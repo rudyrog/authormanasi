@@ -63,36 +63,35 @@ export default function Navigation() {
         >
           <Link
             href="/"
-            className={`navButton ${pathname === "/" ? "text-white" : ""}`}
-            onClick={handleNavigation("/")}
+            className={`navButton ${pathname === "/" ? "text-orange-200" : "text-orange-200/70"}`}
           >
             Home
           </Link>
           <div>|</div>
           <Link
             href="/books"
-            className={`navButton ${pathname === "/books" ? "text-white" : ""}`}
+            className={`navButton ${pathname === "/books" ? "text-orange-200" : "text-orange-200/70"}`}
             onClick={handleNavigation("/books")}
           >
             Books
           </Link>
           <Link
             href="/blogs"
-            className={`navButton ${pathname === "/blogs" ? "text-white" : ""}`}
+            className={`navButton ${pathname === "/blogs" ? "text-orange-200" : "text-orange-200/70"}`}
             onClick={handleNavigation("/blogs")}
           >
             Blogs
           </Link>
           <Link
             href="/about"
-            className={`navButton ${pathname === "/about" ? "text-white" : ""}`}
+            className={`navButton ${pathname === "/about" ? "text-orange-200" : "text-orange-200/70"}`}
             onClick={handleNavigation("/about")}
           >
             About
           </Link>
           <Link
             href="/contact"
-            className={`navButton ${pathname === "/contact" ? "text-white" : ""}`}
+            className={`navButton ${pathname === "/contact" ? "text-orange-200" : "text-orange-200/70"}`}
             onClick={handleNavigation("/contact")}
           >
             Contact

@@ -19,7 +19,7 @@ function BookCard({
 }) {
   return (
     <>
-      <div className="book text-white md:translate-x-[20%] md:translate-y-[10%]">
+      <div className="book text-white md:translate-x-[20%] md:translate-y-[25%]">
         <div className="flex w-fit flex-col items-center justify-center gap-5 md:flex-row md:items-start">
           <Image
             alt="BookImg"
@@ -32,14 +32,14 @@ function BookCard({
             <div className="fodo text-7xl" style={{ color: "wheat" }}>
               {title}
             </div>
-            <div className="brownbulgary">{description}</div>
+            <div className="aptos text-lg">{description}</div>
             <div className="brownbulgary text-orange-200/80">{date}</div>
             <Link
               href={"https://amzn.in/d/6efa52m"}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="buyButton">Buy Now</button>
+              <button className="buyButton">Get one now!</button>
             </Link>
           </div>
         </div>

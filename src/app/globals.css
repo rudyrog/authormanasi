@@ -102,30 +102,14 @@ body {
 }
 .navButton {
   background-color: transparent;
-  @apply brownbulgary rounded-lg border-2 border-transparent p-1 text-lg font-medium;
-  transition:
-    background-color 0.8s ease,
-    border-color 0.8s ease,
-    color 0.8s ease;
+  @apply aptos rounded-lg border-2 border-transparent p-1 text-lg font-medium tracking-wide transition-all hover:underline hover:underline-offset-4;
 }
 
-.navButton:hover {
-  background-color: rgb(226, 190, 122);
-  @apply text-stone-800;
-}
 .buyButton {
   background-color: wheat;
-  @apply brownbulgary rounded-lg border-2 border-transparent p-1 text-xl font-medium text-black;
-  transition:
-    background-color 0.8s ease,
-    border-color 0.8s ease,
-    color 0.8s ease;
+  @apply aptos rounded-lg border-2 border-transparent p-1 text-xl font-medium text-black transition-all duration-300 hover:bg-emerald-300/80;
 }
 
-.buyButton:hover {
-  background-color: lightgreen;
-  @apply text-stone-800;
-}
 .devLink {
   @apply aptos absolute left-8 top-20 z-50 scale-50 border-b-2 border-black text-xs font-bold text-black md:left-16 md:top-40 md:scale-100 md:text-xl;
   transform: rotate(-18deg);
